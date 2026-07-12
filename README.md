@@ -1,6 +1,6 @@
 # Runner — Terminal Endless Runner
 
-An endless runner game built with **vanilla JavaScript** — no frameworks, no dependencies. A pixel soldier runs through a terminal landscape dodging firewalls, glitches, drones and satellites. Same visual identity as the [Memory Game](https://github.com/) and [Snake](https://github.com/) projects.
+An endless runner game built with **vanilla JavaScript** — no frameworks, no dependencies. A pixel soldier runs through a terminal landscape dodging firewalls, glitches, drones and satellites. Same visual identity as the [Memory Game](https://github.com/hohnhenrique/dino-game) and [Snake](https://github.com/hohnhenrique/snake-game) projects.
 
 🎮 [Play online](https://hohnhenrique.github.io/dino-game) 
 
