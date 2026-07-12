@@ -2,9 +2,7 @@
 
 An endless runner game built with **vanilla JavaScript** — no frameworks, no dependencies. A pixel soldier runs through a terminal landscape dodging firewalls, glitches, drones and satellites. Same visual identity as the [Memory Game](https://github.com/) and [Snake](https://github.com/) projects.
 
-🎮 [Play online](#) — *replace with your GitHub Pages link after deploy*
-
----
+🎮 [Play online](https://hohnhenrique.github.io/dino-game) 
 
 ## Gameplay
 

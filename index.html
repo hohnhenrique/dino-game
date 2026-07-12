@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RUNNER // terminal endless runner</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="scanlines"></div>
+
+  <main class="console">
+    <header class="console__header">
+      <div class="console__title">
+        <span class="console__bracket">[</span>
+        RUNNER
+        <span class="console__bracket">]</span>
+      </div>
+      <p class="console__subtitle">endless runner // v1.0</p>
+    </header>
+
+    <div class="player-bar">
+      <span class="player-bar__label">jogador:</span>
+      <span class="player-bar__name" id="player-name">—</span>
+      <button class="player-bar__change" id="change-player-btn">trocar</button>
+    </div>
+
+    <section class="hud">
+      <div class="hud__stat">
+        <span class="hud__label">pontos</span>
+        <span class="hud__value" id="score">00000</span>
+      </div>
+      <div class="hud__stat">
+        <span class="hud__label">recorde</span>
+        <span class="hud__value" id="high-score">00000</span>
+      </div>
+      <div class="hud__stat">
+        <span class="hud__label">nível</span>
+        <span class="hud__value" id="level-display">01</span>
+      </div>
+    </section>
+
+    <section class="board-wrapper">
+      <canvas id="board" aria-label="tabuleiro do runner"></canvas>
+      <!-- banner de pausa sobreposto ao canvas -->
+      <div class="pause-banner" id="pause-banner" hidden>
+        <span class="pause-banner__text">❚❚ PAUSADO</span>
+        <span class="pause-banner__hint">espaço · P para continuar</span>
+      </div>
+    </section>
+
+    <p class="status-line" id="status-line">pressione qualquer tecla ou toque para começar</p>
+
+    <div class="controls-row">
+      <button class="ctrl-btn" id="btn-jump"  aria-label="pular">▲ pular</button>
+      <button class="ctrl-btn" id="btn-duck"  aria-label="agachar">▼ agachar</button>
+    </div>
+
+    <div class="stats-toggle-row">
+      <button class="stats-toggle-btn" id="stats-toggle-btn">▸ ranking</button>
+    </div>
+
+    <section class="stats-panel" id="stats-panel" hidden>
+      <div class="stats-panel__header">
+        <span class="stats-panel__title">top 10</span>
+        <button class="stats-refresh-btn" id="stats-refresh-btn" title="recarregar" aria-label="recarregar ranking">↻</button>
+      </div>
+      <div class="stats-panel__content" id="stats-content"></div>
+    </section>
+
+    <footer class="console__footer">
+      <a href="https://github.com/" target="_blank" rel="noopener noreferrer">código-fonte</a>
+    </footer>
+  </main>
+
+  <!-- modal: identificação -->
+  <div class="overlay" id="player-overlay">
+    <div class="overlay__panel">
+      <p class="overlay__message">IDENTIFICAÇÃO</p>
+      <p class="overlay__detail">informe seu nome para começar</p>
+      <div class="overlay__input-group">
+        <input class="overlay__input" id="player-input" type="text"
+          maxlength="20" placeholder="seu nome..." autocomplete="off" spellcheck="false" />
+        <p class="overlay__input-error" id="player-input-error"></p>
+      </div>
+      <button class="overlay__btn" id="player-confirm-btn">confirmar</button>
+    </div>
+  </div>
+
+  <!-- modal: game over (com ranking inline) -->
+  <div class="overlay" id="gameover-overlay">
+    <div class="overlay__panel overlay__panel--wide">
+      <p class="overlay__message is-lose" id="gameover-message">GAME OVER</p>
+      <p class="overlay__detail" id="gameover-detail"></p>
+
+      <!-- resultado da partida -->
+      <div class="win-record" id="win-record"></div>
+
+      <!-- ranking top 10 inline -->
+      <div class="gameover-ranking">
+        <div class="gameover-ranking__header">
+          <span class="gameover-ranking__title">top 10</span>
+          <button class="stats-refresh-btn" id="gameover-refresh-btn" title="recarregar ranking" aria-label="recarregar ranking">↻</button>
+        </div>
+        <div class="gameover-ranking__content" id="gameover-ranking-content">
+          <p class="stats-empty">carregando...</p>
+        </div>
+      </div>
+
+      <button class="overlay__btn" id="restart-btn">jogar novamente</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
